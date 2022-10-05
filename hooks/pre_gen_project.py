@@ -3,16 +3,19 @@ import re
 import sys
 
 
-MODULE_REGEX = r'^[_a-zA-Z][_a-zA-Z0-9]+$'
+MIN_CELLPY_VERSION = (0, 5)
 cellpy_version = '{{ cookiecutter.cellpy_version }}'
+_cellpy_version = cellpy_version.split(".")
 
-# print(module_name)
-print(cellpy_version)
-#
-# if not re.match(MODULE_REGEX, module_name):
-#     print('ERROR: %s is not a valid Python module name!' % module_name)
-#
-#     # exits with status 1 to indicate failure
-#     sys.exit(1)
+too_old = False
+
+if int(_cellpy_version[0]) < MIN_CELLPY_VERSION[0]:
+    too_old = True
+elif int(_cellpy_version[1]) < MIN_CELLPY_VERSION[1]:
+    too_old = True
+
+if too_old:
+    print(f"Your version of cellpy is too old - aborting")
+    sys.exit(1)
 
 print(f"setting up project in the following directory: {os.getcwd()}")
