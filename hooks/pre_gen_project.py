@@ -4,7 +4,7 @@ import sys
 
 
 MODULE_REGEX = r'^[_a-zA-Z][_a-zA-Z0-9]+$'
-cellpy_version = '{{ cookiecutter.cellpy_version }}'
+cellpy_version = '{{ cellpy_version }}'
 
 # print(module_name)
 print(cellpy_version)
