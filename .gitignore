@@ -133,3 +133,6 @@ dmypy.json
 
 # jupyter
 *.ipynb_checkpoints
+
+# Local
+check.py
