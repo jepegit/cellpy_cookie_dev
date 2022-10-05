@@ -15,7 +15,9 @@ elif int(_cellpy_version[1]) < MIN_CELLPY_VERSION[1]:
     too_old = True
 
 if too_old:
-    print(f"Your version of cellpy is too old - aborting")
+    print()
+    print("OH NO!!!!")
+    print(f"Your version of cellpy is too old - aborting!")
     sys.exit(1)
 
 print(f"setting up project in the following directory: {os.getcwd()}")
