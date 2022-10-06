@@ -3,16 +3,18 @@ import re
 import sys
 
 
-MIN_CELLPY_VERSION = (0, 5)
+MIN_CELLPY_MAJOR, MIN_CELLPY_MINOR = 0, 5
 cellpy_version = '{{ cookiecutter.cellpy_version }}'
-_cellpy_version = cellpy_version.split(".")
-
+major, minor = cellpy_version.split(".")[:2]
+major, minor = int(major), int(minor)
 too_old = False
 
-if int(_cellpy_version[0]) < MIN_CELLPY_VERSION[0]:
+if major < MIN_CELLPY_MAJOR:
     too_old = True
-elif int(_cellpy_version[1]) < MIN_CELLPY_VERSION[1]:
-    too_old = True
+
+if major == MIN_CELLPY_MAJOR:
+    if minor < MIN_CELLPY_MINOR:
+        too_old = True
 
 if too_old:
     print()
