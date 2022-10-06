@@ -18,8 +18,11 @@ if major == MIN_CELLPY_MAJOR:
 
 if too_old:
     print()
-    print("OH NO!!!!")
-    print(f"Your version of cellpy is too old - aborting!")
+    print(80 * "=")
+    print("  Cellpy Cookie: OH NO!!!!")
+    print("  Cellpy Cookie: Your version of cellpy is too old - aborting!")
+    print(80 * "=")
+    print()
     sys.exit(1)
 
 print(f"setting up project in the following directory: {os.getcwd()}")
